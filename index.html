@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Is Nano Banana Pro a Low-Level Vision All-Rounder?</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="./static/js/distill_template.v2.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+        <script src="https://rawgit.com/nstrayer/slid3r/master/dist/slid3r.js"></script>
+
+        <script defer="" src="./static/js/hider.js"></script>
+        <script src="./static/js/image_interact.js"></script>
+        <script src="./static/js/switch_videos.js"></script>
+
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="./static/css/worldlens.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>  <!-- jquery -->
+        <script defer src="./static/js/medium-zoom.min.js"></script>
+        <script defer src="./static/js/zoom.js"></script>
+
+
+        
+
+        <style>
+          #definition .wb-bridge {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            margin: 1rem 0 .75rem;
+          }
+          #definition .wb-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin-top: .5rem;
+          }
+          @media (max-width: 1200px) {
+            #definition .wb-grid-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          }
+          @media (max-width: 1024px) {
+            #definition .wb-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          }
+          @media (max-width: 640px) {
+            #definition .wb-grid-4 { grid-template-columns: 1fr; }
+          }
+          #definition .wb-card h4 {
+            display: flex; align-items: center; gap: .5rem;
+            font-size: 1rem; margin: 0 0 .35rem;
+          }
+          #definition .wb-card p.small {
+            margin: .35rem 0; color: #4b5563; line-height: 1.6;
+          }
+
+          .pdf-container {
+          max-width: 800px; 
+          margin: 0 auto;
+          height: 500px;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pdf-container iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        </style>
+
+
+
+    </head>
+
+
+    <body>
+          <div class="header-wrapper">
+            <div class="header-container" id="header-container">
+                <div class="header-content" style="flex: 1.2;">
+                    <h1 style="font-size:3.4rem;">
+                        Is Nano Banana Pro a Low-Level Vision All-Rounder?
+                    </h1>
+                    <h2 style="font-size:2.4rem;">
+                        A Comprehensive Evaluation on 14 Tasks and 40 Datasets
+                    </h2>
+                    <h2 style="margin:2.2rem 0 1.8rem; display:flex; align-items:center; gap:0.4rem; font-size:1.4rem;">
+                        <span class="icon is-small">
+                            <img src="assets_nbpro/hust.png" style="height:1.6em; vertical-align:text-bottom;">
+                        </span>&nbsp;Huazhong University of Science and Technology
+                    </h2>
+                    
+                    <div class="button-container">
+                        <a href="assets_common/papers/LowLevelBananaEval_Report.pdf" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <i class="ai ai-arxiv" style="height: 1.5em;"></i>
+                            </span><span>arXiv</span>
+                        </a>
+                        <a href="assets_common/papers/LowLevelBananaEval_Report.pdf" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <img src="assets_common/icons/pdf.png" style="height: 1.4em;">
+                            </span><span>PDF</span>
+                        </a>
+                        <a href="https://github.com/zplusdragon/LowLevelBanana" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="assets_common/icons/github.png" style="height: 1.4em;">
+                            </span><span>GitHub</span>
+                        </a>
+                        <a href="https://huggingface.co/datasets/jlongzuo/LowLevelEval" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="assets_common/icons/hf.png" style="height: 1.5em;">
+                            </span><span>Data</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-image" style="flex: 0.8; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets_nbpro/abs.png" alt="Teaser Image" class="teaser-image" 
+                        style="max-width: 100%; height: auto; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <d-article>
+            <d-contents>
+                <nav>
+                    <h4>Contents</h4>
+                    <div><a href="#examples">Examples</a></div>
+                    <div><a href="#contributors">Contributors</a></div>
+                </nav>
+            </d-contents>
+
+
+              <section id="introduction">
+                <div class="wb-section">
+                  <div class="wb-kicker">
+                    <span class="icon is-small">
+                        <img src="assets_nbpro/banana.png" style="height: 1.4em;">
+                      </span>&nbsp;Is Nano Banana Pro a Low-level Vision All-Rounder?</div>
+                  <div class="wb-hr"></div>
+                  <figure style="width: 100%; max-width: 1000px; display: block; margin: 24px auto;">
+                    <img src="assets_nbpro/intro.png">
+                  </figure>
+                  <p class="wb-lead">
+                    The rapid evolution of text-to-image generation models has revolutionized visual content creation. While commercial products like Nano Banana Pro have garnered significant attention, their potential as generalist solvers for traditional low-level vision challenges remains largely underexplored. 
+                  </p>
+                  <p class="wb-lead">
+                    In this study, we conducted a comprehensive zero-shot evaluation across 14 distinct low-level tasks spanning 40 diverse datasets. By utilizing simple textual prompts without fine-tuning, we benchmarked Nano Banana Pro against state-of-the-art specialist models. 
+                  </p>
+                  <p class="wb-lead">
+                    Our extensive analysis reveals a distinct performance dichotomy: while <strong style="color: #FF6B00;">Nano Banana Pro demonstrates superior subjective visual quality</strong>, often hallucinating plausible high-frequency details that surpass specialist models, <strong style="color: #FF6B00;">it lags behind in traditional reference-based quantitative metrics.</strong>
+                  </p>
+                  <br><br>
+                </div>
+              </section>
+
+                  <!-- Paper poster -->
+                  <section class="hero is-small is-light">
+                    <div class="hero-body">
+                      <div class="container">
+                        <h2 class="title is-3 has-text-centered">Technical Report</h2>
+
+                        <!-- PDF 容器 -->
+                        <div class="pdf-container">
+                          <iframe src="assets_common/papers/LowLevelBananaEval_Report.pdf" 
+                                  frameborder="0"
+                                  allowfullscreen>
+                          </iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- End paper poster -->
+
+
+
+
+
+
+            <h2 id="examples">Generated Examples of Nano Banana Pro</h2>
+            <div class="wb-kicker">
+              Dehazing</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/dehaze_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/dehaze_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dehaze_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dehaze_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/dehaze_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dehaze_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dehaze_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/dehaze_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dehaze_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dehaze_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/dehaze_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Super Resolution</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/SR_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/SR_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/SR_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/SR_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/SR_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/SR_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/SR_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/SR_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/SR_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/SR_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/SR_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+            
+
+
+            <div class="wb-kicker">
+              Deraining</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/derain_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/derain_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/derain_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/derain_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/derain_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/derain_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/derain_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/derain_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/derain_bad2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/derain_bad2_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/derain_bad2_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 2</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Shadow Removal</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/deshadow_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/deshadow_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/deshadow_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/deshadow_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/deshadow_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/deshadow_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/deshadow_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/deshadow_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/deshadow_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/deshadow_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/deshadow_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Motion Deblurring</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/md_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/md_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/md_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/md_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/md_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/md_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/md_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/md_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/md_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/md_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/md_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+           
+
+            <div class="wb-kicker">
+              Defocus Deblurring</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/dd_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/dd_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dd_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dd_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/dd_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dd_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dd_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/dd_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/dd_bad2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/dd_bad2_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/dd_bad2_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 2</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Denoising</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/denoise_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/denoise_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/denoise_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/denoise_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/denoise_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/denoise_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/denoise_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/denoise_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/denoise_bad2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/denoise_bad2_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/denoise_bad2_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 2</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+            
+
+            <div class="wb-kicker">
+              Reflection Removal</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/reflection_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/reflection_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/reflection_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/reflection_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/reflection_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/reflection_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/reflection_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/reflection_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/reflection_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/reflection_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/reflection_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Flare Removal</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/flare_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/flare_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/flare_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/flare_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/flare_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/flare_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/flare_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/flare_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/flare_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/flare_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/flare_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              Low-Light Image Enhancement</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/ll_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/ll_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/ll_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/ll_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/ll_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/ll_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/ll_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/ll_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/ll_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/ll_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/ll_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+            
+
+            <div class="wb-kicker">
+              Underwater Image Enhancement</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/underwater_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/underwater_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/underwater_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/underwater_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/underwater_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/underwater_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/underwater_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/underwater_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/underwater_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/underwater_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/underwater_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+            <div class="wb-kicker">
+              HDR Imaging</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/hdr_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/hdr_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/hdr_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/hdr_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/hdr_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/hdr_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/hdr_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/hdr_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/hdr_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/hdr_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/hdr_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+            
+
+
+
+            <div class="wb-kicker">
+              Multi-Focus Image Fusion</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/mf_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/mf_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/mf_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/mf_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/mf_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/mf_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/mf_bad1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/mf_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/mf_bad2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/mf_bad2_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/mf_bad2_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 2</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+            <div class="wb-kicker">
+              Infrared-Visible Image Fusion</div>
+            <div class="wb-hr"></div>
+
+            <section class="videogen videogen-compare" tabindex="0">
+              <div class="video-hero">
+                <div class="video-compare-split" data-compare>
+                  
+                  <!-- Left: GT -->
+                  <div class="video-wrapper gt-layer">
+                    <video class="video-el" data-role="video-gt" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/iv_good1_ori.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-left">Original</div>
+                  </div>
+
+                  <!-- Right: Generated -->
+                  <div class="video-wrapper gen-layer">
+                    <video class="video-el" data-role="video-gen" autoplay loop muted playsinline>
+                      <source src="assets_nbpro/examples/iv_good1_gen.mp4" type="video/mp4" />
+                    </video>
+                    <div class="video-label label-right" data-role="method-label">Generated</div>
+                  </div>
+
+                  <!-- Split handle -->
+                  <div class="split-handle" data-role="split-handle"
+                      role="separator" aria-label="Drag to compare" aria-orientation="vertical">
+                    <div class="handle-line"></div>
+                    <div class="handle-arrows">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                      </svg>
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnails control which videos load -->
+              <div class="thumb-bar" role="tablist">
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/iv_good1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/iv_good1_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/iv_good1_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 1</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/iv_good2_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/iv_good2_gen.mp4"
+                        data-label="Good Case">
+                  <img src="assets_nbpro/examples/iv_good2_ori.png"
+                      loading="lazy" />
+                  <span>Good Case 2</span>
+                </button>
+
+                <button class="thumb is-active"
+                        role="tab" aria-selected="true"
+                        data-gt-src="assets_nbpro/examples/iv_bad1_ori.mp4"
+                        data-gen-src="assets_nbpro/examples/iv_bad1_gen.mp4"
+                        data-label="Bad Case">
+                  <img src="assets_nbpro/examples/iv_bad1_ori.png"
+                      loading="lazy" />
+                  <span>Bad Case 1</span>
+                </button>
+              </div>
+              <br><br>
+            </section>
+
+
+
+
+
+
+            <section id="contributors">
+              <div class="wb-section">
+
+                <h2>Contributors</h2>
+
+                <div class="contributors-list">
+                 
+                  
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/jialong_zuo.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Jialong Zuo</div>
+                      <div class="contributor-note">Project Leader</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Jialong_Zuo1" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                      <a href="https://scholar.google.com/citations?user=R5OWszMAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a>
+                      <a href="https://github.com/Zplusdragon" target="_blank" aria-label="GitHub"> <i class="fab fa-github"></i> </a>
+                    </div>
+                  </div>
+                  
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/haoyou_deng.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Haoyou Deng</div>
+                      <div class="contributor-note">Document Polish</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Haoyou_Deng1" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                      <a href="https://scholar.google.com/citations?user=MLAjx2cAAAAJ&hl=zh-CN&oi=ao" target="_blank" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/hanyu_zhou.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Hanyu Zhou</div>
+                      <div class="contributor-note">Denoising and Low Light Image Enhancement</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Hanyu_Zhou2" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                      <a href="https://scholar.google.com/citations?user=FgHTmS4AAAAJ&hl=zh-CN&oi=ao" target="_blank" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/Jiaxin_zhu.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Jiaxin Zhu</div>
+                      <div class="contributor-note">Motion Deblurring and Defocus Deblurring</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Jiaxin_Zhu3" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/yicheng_zhang.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Yicheng Zhang</div>
+                      <div class="contributor-note">Multi-focus Image Fusion and Infrared-Visible Image Fusion.</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Yicheng_Zhang4" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/yiwei_zhang.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Yiwei Zhang</div>
+                      <div class="contributor-note">Underwater Image Enhancement and HDR Imaging</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Yiwei_Zhang14" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/yongxin_yan.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Yongxin Yan</div>
+                      <div class="contributor-note">Dehazing and Shadow Removal</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Yongxin_Yan2" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/kaixing_huang.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Kaixing Huang</div>
+                      <div class="contributor-note">Super Resolution</div>
+                    </div>
+                    <div class="contributor-links">
+                      
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/weisen_chen.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Weisen Chen</div>
+                      <div class="contributor-note">Deraining</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Weisen_Chen1" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/yongtai_deng.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Yongtai Deng</div>
+                      <div class="contributor-note">Reflection Removal</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Yongtai_Deng1" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/rui_jin.png"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Rui Jin</div>
+                      <div class="contributor-note">Flare Removal</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://openreview.net/profile?id=~Rui_Jin3" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                    </div>
+                  </div>
+
+                  
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/nong_sang.jpg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Nong Sang</div>
+                      <div class="contributor-note">Advisor</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://faculty.hust.edu.cn/sangnong/zh_CN/index.htm" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                      <a href="https://scholar.google.com/citations?user=ky_ZowEAAAAJ&hl=zh-CN" target="_blank" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a>
+                    </div>
+                  </div>
+
+
+
+                  <!-- Row -->
+                  <div class="contributor-row">
+                    <img class="contributor-photo"
+                        src="assets_common/photos/changxin_gao.jpeg"
+                        loading="lazy" width="56" height="56">
+
+                    <div class="contributor-text">
+                      <div class="contributor-name">Changxin Gao</div>
+                      <div class="contributor-note">Advisor</div>
+                    </div>
+                    <div class="contributor-links">
+                      <a href="https://sites.google.com/site/changxingao/home" target="_blank" aria-label="Homepage"><i class="fas fa-globe"></i> </a>
+                      <a href="https://scholar.google.com/citations?user=4tku-lwAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a>
+                    </div>
+                  </div>
+
+
+                  
+                </div>
+                <br>
+              </div>
+              <br><br>
+            </section>
+
+
+
+            
+            <br><br>
+
+
+            <footer class="wb-footer">
+              <br>
+              <div class="wb-footer-content">
+                <p>
+                  This website is licensed under a
+                  <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Creative Commons Attribution-ShareAlike 4.0 International License
+                  </a>
+                </p>
+                <p>
+                  © LowLevelBanana 2025-2026. All Rights Reserved
+                </p>
+              </div>
+              <br>
+            </footer>
+
+
+        </d-article>
+
+        
+        <script src="contents_bar.js"></script>
+        <script src="./static/js/worldlens.js"></script>
+
+    </body>
+</html>
